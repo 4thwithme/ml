@@ -44,7 +44,7 @@ for i in range(0, len(dataset)):
     review_cleaned = " ".join(review_cleaned)
     corpus.append(review_cleaned)
 
-cv = CountVectorizer(max_features=800)
+cv = CountVectorizer(max_features=750)
 X = cv.fit_transform(corpus).toarray()
 y = dataset.iloc[:, 1].values
 
@@ -67,6 +67,7 @@ classifier.fit(X_train, y_train)
 # 0.81 linear
 # 0.82 poly degree=2, 1500 features
 # 0.825 poly degree=2, 800 features
+# 0.83 poly degree=2, 750 features
 
 
 # classifier = LogisticRegression(random_state=0)
