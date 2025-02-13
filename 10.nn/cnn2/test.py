@@ -6,6 +6,7 @@ from keras.preprocessing import image
 model = load_model("model.h5")
 
 test_image = image.image_utils.load_img(
+# put img here
     "./dataset/validation/porsche.png", target_size=(224, 224)
 )
 
@@ -14,8 +15,6 @@ test_image = np.expand_dims(test_image, axis=0)
 result = model.predict(test_image)
 
 print(result)
-
-# model has 15 classes need to map the result to the class
 
 categories = [
     "Bean",
