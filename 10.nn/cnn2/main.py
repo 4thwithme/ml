@@ -1,7 +1,8 @@
 import numpy as np
-import tensorflow as tf
 from keras.preprocessing import image
-from keras.preprocessing.image import ImageDataGenerator
+from tensorflow.keras.preprocessing.image import ImageDataGenerator
+
+import tensorflow as tf
 
 print(tf.__version__)
 
@@ -20,7 +21,6 @@ testing_gen = ImageDataGenerator(
 testing_set = testing_gen.flow_from_directory(
     "./dataset/test/", target_size=(224, 224), batch_size=32, class_mode="categorical"
 )
-
 
 cnn = tf.keras.models.Sequential()
 
